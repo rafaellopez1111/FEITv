@@ -11,9 +11,15 @@ import java.sql.SQLException;
 
 /**
  *
- * @author andrezanon
+ * @author rafael
  */
 public class Conexao {
+    /**
+     * funcao responsavel pelo conexao do sistema com o banco de dados, identificando o caminho,
+     * a porta e a senha necessarios para acessar o banco.
+     * @return
+     * @throws SQLException
+     */
     public static Connection getConnection() throws SQLException{
         Dotenv dotenv = Dotenv.load();
         Connection conexao = DriverManager.getConnection(

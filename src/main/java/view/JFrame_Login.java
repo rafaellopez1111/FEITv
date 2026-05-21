@@ -13,11 +13,17 @@ public class JFrame_Login extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger =
             java.util.logging.Logger.getLogger(JFrame_Login.class.getName());
 
+    /**
+     * Construtor da tela de login.
+     */
     public JFrame_Login() {
         initComponents();
 
     }
 
+    /**
+     * Inicializa o controller responsável pela lógica da tela.
+     */
     public void initController() {
         try {
             this.controllerLogin = new Controller_Login(this);
@@ -29,8 +35,9 @@ public class JFrame_Login extends javax.swing.JFrame {
         }
     }
 
-    // ★ Placeholder helper
-
+    /**
+     * Inicializa todos os componentes gráficos da interface.
+     */
     @SuppressWarnings("unchecked")
     private void initComponents() {
 
@@ -71,7 +78,6 @@ public class JFrame_Login extends javax.swing.JFrame {
         );
 
         login_button.setText("LOGIN");
-        // ★ Listener conectado
         login_button.addActionListener(this::login_buttonActionPerformed);
 
         jLabel1.setText("FAÇA SEU LOGIN:");
@@ -81,7 +87,6 @@ public class JFrame_Login extends javax.swing.JFrame {
         username_text.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        // ── Layout (mesmo de antes) ──
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -141,13 +146,18 @@ public class JFrame_Login extends javax.swing.JFrame {
         pack();
     }
 
-    // ★ Delega para o controller
+    /**
+     * Executa a ação de login do usuário.
+     */
     private void login_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         if (controllerLogin != null) {
             controllerLogin.login();
         }
     }
 
+    /**
+     * Método principal responsável por iniciar a aplicação.
+     */
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info :
@@ -161,7 +171,6 @@ public class JFrame_Login extends javax.swing.JFrame {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
 
-        // ★ Inicializa controller antes de exibir
         java.awt.EventQueue.invokeLater(() -> {
             JFrame_Login frame = new JFrame_Login();
             frame.initController();
@@ -169,20 +178,28 @@ public class JFrame_Login extends javax.swing.JFrame {
         });
     }
 
-    // ★ Getters para o controller acessar os campos
+    /**
+     * Retorna o campo de texto do usuário.
+     * @return
+     */
     public JTextField getUsername_text() {
         return username_text;
     }
 
+    /**
+     * Retorna o campo de senha.
+     */
     public JTextField getPassword() {
         return password;
     }
 
+    /**
+     * Retorna o botão de login.
+     */
     public JButton getLogin_button() {
         return login_button;
     }
 
-    // Variables declaration
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;

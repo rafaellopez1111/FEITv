@@ -7,17 +7,26 @@ public class JFrame_Inicial_favoritos extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger =
             java.util.logging.Logger.getLogger(JFrame_Inicial_favoritos.class.getName());
 
-    private Controller_inicial_favoritos controller; // ✅
+    private Controller_inicial_favoritos controller;
 
+    /**
+     * Construtor da tela inicial de favoritos.
+     */
     public JFrame_Inicial_favoritos() {
         initComponents();
         setLocationRelativeTo(null);
     }
 
+    /**
+     * Inicializa o controller da tela.
+     */
     public void initController() {
         this.controller = new Controller_inicial_favoritos(this);
     }
 
+    /**
+     * Inicializa e organiza os componentes da interface gráfica.
+     */
     @SuppressWarnings("unchecked")
     private void initComponents() {
 
@@ -121,18 +130,33 @@ public class JFrame_Inicial_favoritos extends javax.swing.JFrame {
         pack();
     }
 
+    /**
+     * Abre a tela de criação, edição e exclusão de playlists.
+     * @param evt
+     */
     private void playlist_inicial_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         if (controller != null) controller.abrirPlaylistCRUD();
     }
 
+    /**
+     * Abre a tela de gerenciamento de vídeos favoritos.
+     * @param evt
+     */
     private void manager_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         if (controller != null) controller.abrirGerenciarVideosFavoritos();
     }
 
+    /**
+     * Retorna para a tela anterior.
+     * @param evt
+     */
     private void go_back_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         if (controller != null) controller.voltar();
     }
-
+    /**
+     * Método principal responsável por iniciar a aplicação.
+     * @param args
+     */
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

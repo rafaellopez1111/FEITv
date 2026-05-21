@@ -7,18 +7,30 @@ import java.sql.SQLException;
 
 public class JFrame_inicial extends javax.swing.JFrame {
 
+    /** Controlador da tela inicial */
     private Controller_Inicial controller_inicial;
+
+    /** Logger da classe */
     private static final java.util.logging.Logger logger =
             java.util.logging.Logger.getLogger(JFrame_inicial.class.getName());
 
+    /**
+     * Construtor da tela inicial
+     */
     public JFrame_inicial() {
         initComponents();
     }
 
+    /**
+     * Inicializa o controlador
+     */
     public void initController() {
         this.controller_inicial = new Controller_Inicial(this);
     }
 
+    /**
+     * Inicializa os componentes da interface
+     */
     @SuppressWarnings("unchecked")
     private void initComponents() {
 
@@ -44,6 +56,7 @@ public class JFrame_inicial extends javax.swing.JFrame {
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
+
         jPanel1Layout.setHorizontalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
@@ -52,6 +65,7 @@ public class JFrame_inicial extends javax.swing.JFrame {
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(201, Short.MAX_VALUE))
         );
+
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
@@ -69,27 +83,23 @@ public class JFrame_inicial extends javax.swing.JFrame {
         jLabel6.setText("4.");
 
         buscar_video_button.setText("Buscar Vídeo");
-
         buscar_video_button.addActionListener(this::buscar_video_buttonActionPerformed);
 
         list_button.setText("Listar Informações");
-
         list_button.addActionListener(this::list_buttonActionPerformed);
 
         like_button.setText("Curtir Vídeos");
-
         like_button.addActionListener(this::like_buttonActionPerformed);
 
         playlist_button.setText("Gerenciar Playlists");
-
         playlist_button.addActionListener(this::playlist_buttonActionPerformed);
 
         exit_button.setText("SAIR");
-
         exit_button.addActionListener(this::exit_buttonActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
+
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE,
@@ -120,6 +130,7 @@ public class JFrame_inicial extends javax.swing.JFrame {
                                 .addGap(268, 268, 268)
                                 .addComponent(exit_button))
         );
+
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
@@ -152,28 +163,44 @@ public class JFrame_inicial extends javax.swing.JFrame {
         pack();
     }
 
+    /**
+     * Abre a tela de busca de vídeos
+     */
     private void buscar_video_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         if (controller_inicial != null) controller_inicial.paginabuscar();
     }
 
+    /**
+     * Abre a tela de listagem
+     */
     private void list_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         if (controller_inicial != null) controller_inicial.paginalistar();
     }
 
+    /**
+     * Abre a tela de curtidas
+     */
     private void like_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         if (controller_inicial != null) controller_inicial.paginacurtidas();
     }
 
+    /**
+     * Abre a tela de playlists
+     */
     private void playlist_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         if (controller_inicial != null) controller_inicial.paginaplaylist();
     }
 
+    /**
+     * Retorna para a tela de login
+     */
     private void exit_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         if (controller_inicial != null) {
             try {
                 controller_inicial.paginalogin();
             } catch (SQLException e) {
                 e.printStackTrace();
+
                 JOptionPane.showMessageDialog(this,
                         "Erro ao voltar para login: " + e.getMessage(),
                         "ERRO", JOptionPane.ERROR_MESSAGE);
@@ -181,20 +208,27 @@ public class JFrame_inicial extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Método principal da aplicação
+     */
     public static void main(String args[]) {
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info :
                     javax.swing.UIManager.getInstalledLookAndFeels()) {
+
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+
+        } catch (ReflectiveOperationException |
+                 javax.swing.UnsupportedLookAndFeelException ex) {
+
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
 
-        // ★ FIX: inicializa controller antes de exibir
         java.awt.EventQueue.invokeLater(() -> {
             JFrame_inicial frame = new JFrame_inicial();
             frame.initController();

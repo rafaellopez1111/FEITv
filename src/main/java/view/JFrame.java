@@ -170,23 +170,44 @@ public class JFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Evento do campo username.
+     * @param evt
+     */
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameActionPerformed
 
+    /**
+     * Evento do campo password.
+     * @param evt
+     */
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordActionPerformed
+
+    /**
+     * Evento do campo nome completo.
+     * @param evt
+     */
 
     private void full_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_full_nameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_full_nameActionPerformed
 
+    /**
+     * Realiza o cadastro do usuário.
+     * @param evt
+     */
     private void sign_upActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sign_upActionPerformed
                                   
         this.controller.inserir();   
     }//GEN-LAST:event_sign_upActionPerformed
 
+    /**
+     * Abre a tela de login.
+     * @param evt
+     */
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         this.controller.abreLogin();
     
@@ -194,6 +215,7 @@ public class JFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_loginActionPerformed
     
     /**
+     *  Método principal da aplicação.
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -224,7 +246,6 @@ public class JFrame extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField birth_date;
     private javax.swing.JTextField full_name;
     private javax.swing.JLabel jLabel1;
@@ -239,114 +260,226 @@ public class JFrame extends javax.swing.JFrame {
     private javax.swing.JButton sign_up;
     private javax.swing.JTextField username;
 
+    /**
+     * Retorna a data de nascimento.
+     * @return birth_date
+     */
     public JTextField getBirth_date() {
         return birth_date;
     }
 
+    /**
+     * Define a data de nascimento.
+     * @param birth_date
+     */
     public void setBirth_date(JTextField birth_date) {
         this.birth_date = birth_date;
     }
 
+    /**
+     * Retorna o label 1.
+     * @return jLabel1
+     */
     public JLabel getjLabel1() {
         return jLabel1;
     }
 
+    /**
+     * Define o label 1.
+     * @param jLabel1
+     */
     public void setjLabel1(JLabel jLabel1) {
         this.jLabel1 = jLabel1;
     }
 
+    /**
+     * Retorna o label 2.
+     * @return jLabel2
+     */
     public JLabel getjLabel2() {
         return jLabel2;
     }
 
+    /**
+     * Define o label 2.
+     * @param jLabel2
+     */
     public void setjLabel2(JLabel jLabel2) {
         this.jLabel2 = jLabel2;
     }
 
+    /**
+     * Retorna o label 3.
+     * @return jLabel3
+     */
     public JLabel getjLabel3() {
         return jLabel3;
     }
 
+    /**
+     * Define o label 3.
+     * @param jLabel3
+     */
     public void setjLabel3(JLabel jLabel3) {
         this.jLabel3 = jLabel3;
     }
 
+    /**
+     * Retorna o label 4.
+     * @return jLabel4
+     */
     public JLabel getjLabel4() {
         return jLabel4;
     }
 
+    /**
+     * Define o label 4.
+     * @param jLabel4
+     */
     public void setjLabel4(JLabel jLabel4) {
         this.jLabel4 = jLabel4;
     }
 
+    /**
+     * Retorna o label 5.
+     * @return jLabel5
+     */
     public JLabel getjLabel5() {
         return jLabel5;
     }
 
+    /**
+     * Define o label 5.
+     * @param jLabel5
+     */
     public void setjLabel5(JLabel jLabel5) {
         this.jLabel5 = jLabel5;
     }
 
+    /**
+     * Retorna o label 6.
+     * @return jLabel6
+     */
     public JLabel getjLabel6() {
         return jLabel6;
     }
 
+    /**
+     * Define o label 6.
+     * @param jLabel6
+     */
     public void setjLabel6(JLabel jLabel6) {
         this.jLabel6 = jLabel6;
     }
 
+    /**
+     * Retorna o painel principal.
+     * @return jPanel1
+     */
     public JPanel getjPanel1() {
         return jPanel1;
     }
 
+    /**
+     * Define o painel principal.
+     * @param jPanel1
+     */
     public void setjPanel1(JPanel jPanel1) {
         this.jPanel1 = jPanel1;
     }
 
+    /**
+     * Retorna o botão login.
+     * @return login
+     */
     public JButton getLogin() {
         return login;
     }
 
+    /**
+     * Define o botão login.
+     * @param login
+     */
     public void setLogin(JButton login) {
         this.login = login;
     }
 
+    /**
+     * Retorna o campo nome completo.
+     * @return full_name
+     */
     public JTextField getFull_name() {
         return full_name;
     }
 
+    /**
+     * Define o campo nome completo.
+     * @param name
+     */
     public void setFull_name(JTextField name) {
         this.full_name = name;
     }
 
+    /**
+     * Retorna o campo senha.
+     * @return password
+     */
     public JTextField getPassword() {
         return password;
     }
 
+    /**
+     * Define o campo senha.
+     * @param password
+     */
     public void setPassword(JTextField password) {
         this.password = password;
     }
 
+    /**
+     * Retorna o botão cadastro.
+     * @return sign_up
+     */
     public JButton getSign_up() {
         return sign_up;
     }
 
+    /**
+     * Define o botão cadastro.
+     * @param sign_up
+     */
     public void setSign_up(JButton sign_up) {
         this.sign_up = sign_up;
     }
 
+    /**
+     * Retorna o campo username.
+     * @return username
+     */
     public JTextField getUsername() {
         return username;
     }
 
+    /**
+     * Define o campo username.
+     * @param username
+     */
     public void setUsername(JTextField username) {
         this.username = username;
     }
 
+    /**
+     * Retorna o controller.
+     * @return controller
+     */
     public Controller getController() {
         return controller;
     }
 
+    /**
+     * Define o controller.
+     * @param controller
+     */
     public void setController(Controller controller) {
         this.controller = controller;
     }

@@ -9,7 +9,7 @@ public class JFrame_listadefavs extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger =
             java.util.logging.Logger.getLogger(JFrame_listadefavs.class.getName());
 
-    private Controller_Playlist controller; // ✅
+    private Controller_Playlist controller;
 
     public JFrame_listadefavs() {
         initComponents();
@@ -66,7 +66,7 @@ public class JFrame_listadefavs extends javax.swing.JFrame {
         );
 
         go_back_button.setText("Voltar");
-        go_back_button.addActionListener(this::go_back_buttonActionPerformed); // ✅
+        go_back_button.addActionListener(this::go_back_buttonActionPerformed);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18));
         jLabel1.setText("LISTA DE FAVORITOS");
@@ -81,10 +81,10 @@ public class JFrame_listadefavs extends javax.swing.JFrame {
         video_name_remove.setText("NOME DO VÍDEO");
 
         remove_button.setText("REMOVER");
-        remove_button.addActionListener(this::remove_buttonActionPerformed); // ✅
+        remove_button.addActionListener(this::remove_buttonActionPerformed);
 
         add_button.setText("ADICIONAR");
-        add_button.addActionListener(this::add_buttonActionPerformed); // ✅
+        add_button.addActionListener(this::add_buttonActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -162,16 +162,14 @@ public class JFrame_listadefavs extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(() -> {
             JFrame_listadefavs frame = new JFrame_listadefavs();
-            frame.initController(); // ✅ importantíssimo
+            frame.initController();
             frame.setVisible(true);
         });
     }
 
-    // ✅ Getters usados pelo controller
     public JTextField getVideo_name_add() { return video_name_add; }
     public JTextField getVideo_name_remove() { return video_name_remove; }
 
-    // Variables declaration
     private javax.swing.JButton add_button;
     private javax.swing.JButton go_back_button;
     private javax.swing.JLabel jLabel1;

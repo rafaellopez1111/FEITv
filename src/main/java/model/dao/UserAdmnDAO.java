@@ -9,27 +9,36 @@ public class UserAdmnDAO {
 
     private Connection conn;
 
+    /**
+     * cria o DAO responsável pelas operações da tabela admin_user
+     * utilizando a conexão com o banco de dados.
+     * @param conn
+     */
     public UserAdmnDAO(Connection conn) {
         this.conn = conn;
     }
 
+    /**
+     * retorna a conexão atualmente utilizada pelo DAO.
+     * @return
+     */
     public Connection getConn() {
         return conn;
     }
 
-    // ★ CORRIGIDO: busca pelo user_id (a tabela admin_user não tem username)
+    /**
+     * executa uma query SELECT para verificar se um usuário
+     * possui registro de administrador no banco de dados.
+     * @param userId
+     * @return
+     * @throws SQLException
+     */
     public boolean isAdmin(int userId) throws SQLException {
         String sql = "SELECT admin_id FROM admin_user WHERE user_id = ?";
         PreparedStatement statement = this.conn.prepareStatement(sql);
         statement.setInt(1, userId);
         ResultSet rs = statement.executeQuery();
-        return rs.next(); // true se encontrou registro = é admin
+        return rs.next();
     }
 
-    public ResultSet consultarUsuarioadm() throws SQLException {
-        String sql = "SELECT * FROM admin_user";
-        PreparedStatement statement = this.conn.prepareStatement(sql);
-        statement.execute();
-        return statement.getResultSet();
-    }
 }

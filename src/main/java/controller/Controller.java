@@ -12,25 +12,47 @@ import view.*;
 public class Controller {
     private UserDAO userdao;
     private JFrame jframe;
-    private JFrame_consultaruser jframe_consultar;  // ★ NOVO
+    private JFrame_consultaruser jframe_consultar;
+    private JFrame_visualizarestatisticas jframe_estatisticas;
 
-    // ── Construtor para tela de CADASTRO ─────────────────────────
+    /**
+     *construtor para a pagina de cadastro
+     * @param jframe
+     * @throws SQLException
+     */
     public Controller(JFrame jframe) throws SQLException {
         this.jframe = jframe;
         Conexao conexao = new Conexao();
         this.userdao = new UserDAO(conexao.getConnection());
     }
 
-    // ── Construtor para tela de CONSULTA ─────────────────────────
+    /**
+     *construtor usado para o jframe de consultar um usuario especifico
+     * @param jframe_consultar
+     * @throws SQLException
+     */
     public Controller(JFrame_consultaruser jframe_consultar) throws SQLException {
         this.jframe_consultar = jframe_consultar;
         Conexao conexao = new Conexao();
         this.userdao = new UserDAO(conexao.getConnection());
     }
 
-    // ══════════════════════════════════════════════════════════════
-    //  INSERIR (tela de cadastro)
-    // ══════════════════════════════════════════════════════════════
+    /**
+     * controller feito para uso na pagina de visualizacao de estatisticas para ver todos os usuarios.
+     * @param jframe_estatisticas
+     * @throws SQLException
+     */
+    public Controller(JFrame_visualizarestatisticas jframe_estatisticas) throws SQLException {
+        this.jframe_estatisticas = jframe_estatisticas;
+        Conexao conexao = new Conexao();
+        this.userdao = new UserDAO(conexao.getConnection());
+    }
+
+
+    /**
+     * funcao que pega os inputs do usuario e os insere no banco de dados, seguindo o principio de
+     * chave unica imposto no banco de dados para username.
+     */
     public void inserir() {
         String nome = this.jframe.getFull_name().getText();
         String usuario = this.jframe.getUsername().getText();
@@ -51,9 +73,10 @@ public class Controller {
         }
     }
 
-    // ══════════════════════════════════════════════════════════════
-    //  CONSULTAR (tela de consulta)
-    // ══════════════════════════════════════════════════════════════
+    /**
+     * funcao que consulta a existencia de um usuario ou nao, para isso pega o input do usuario dentro do
+     * jframe e tenta encontrar no banco de dados, exibindo as informacoes caso ache.
+     */
     public void consultarUsuario() {
         String usuario = this.jframe_consultar.getUsername().getText().trim();
 
@@ -94,15 +117,10 @@ public class Controller {
                     "ERRO", JOptionPane.ERROR_MESSAGE);
         }
     }
-    // ── Field ────────────────────────────────────────────────────
-    private JFrame_visualizarestatisticas jframe_estatisticas;
 
-    public Controller(JFrame_visualizarestatisticas jframe_estatisticas) throws SQLException {
-        this.jframe_estatisticas = jframe_estatisticas;
-        Conexao conexao = new Conexao();
-        this.userdao = new UserDAO(conexao.getConnection());
-    }
-
+    /**
+     * funcao feita para listar todos os usuarios registrados no sistema, usa da funcao consultarusuarios de userdao para procurar os usuarios no banco de dados.
+     */
     public void listarUsuarios() {
         try {
             ResultSet rs = this.userdao.consultarUsuarios();
@@ -139,13 +157,19 @@ public class Controller {
         }
     }
 
+    /**
+     * funcao que fecha a pagina de cadastro e abre a pagina de login
+     */
     public void abreLogin() {
         JFrame_Login jFrameLogin = new JFrame_Login();
         jFrameLogin.initController();
         jFrameLogin.setVisible(true);
-        this.jframe.dispose();
+        this.jframe.setVisible(false);
     }
 
+    /**
+     * funcao para voltar a página inicial de administrador
+     */
     public void voltarConsulta() {
         JFrame_inicial_admin jFrame_inicial_admin = new JFrame_inicial_admin();
         jFrame_inicial_admin.initController();

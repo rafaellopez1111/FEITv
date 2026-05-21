@@ -5,18 +5,30 @@ import javax.swing.*;
 
 public class JFrame_inicial_admin extends javax.swing.JFrame {
 
+    /** Controlador da tela inicial do administrador */
     private Controller_inicial_admin controller;
+
+    /** Logger da classe */
     private static final java.util.logging.Logger logger =
             java.util.logging.Logger.getLogger(JFrame_inicial_admin.class.getName());
 
+    /**
+     * Construtor da tela inicial do administrador
+     */
     public JFrame_inicial_admin() {
         initComponents();
     }
 
+    /**
+     * Inicializa o controlador
+     */
     public void initController() {
         this.controller = new Controller_inicial_admin(this);
     }
 
+    /**
+     * Inicializa os componentes da interface
+     */
     @SuppressWarnings("unchecked")
     private void initComponents() {
 
@@ -46,12 +58,15 @@ public class JFrame_inicial_admin extends javax.swing.JFrame {
         jLabel6.setText("4.");
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+
         jLabel5.setFont(new java.awt.Font("Showcard Gothic", 1, 24));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("FEITV");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+
         jPanel1.setLayout(jPanel1Layout);
+
         jPanel1Layout.setHorizontalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
@@ -60,6 +75,7 @@ public class JFrame_inicial_admin extends javax.swing.JFrame {
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(201, Short.MAX_VALUE))
         );
+
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
@@ -102,152 +118,275 @@ public class JFrame_inicial_admin extends javax.swing.JFrame {
         jLabel9.setText("7.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+
         getContentPane().setLayout(layout);
+
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+
+                                                        .addComponent(jLabel4,
+                                                                javax.swing.GroupLayout.Alignment.TRAILING)
+
                                                         .addGroup(layout.createSequentialGroup()
                                                                 .addGap(232, 232, 232)
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
+                                                                .addGroup(layout.createParallelGroup(
+                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+
                                                                         .addComponent(jLabel7)
                                                                         .addComponent(jLabel6))))
+
                                                 .addGap(18, 18, 18)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
+                                                .addGroup(layout.createParallelGroup(
+                                                                javax.swing.GroupLayout.Alignment.LEADING)
+
                                                         .addComponent(playlist_button)
                                                         .addComponent(consult_users_button)
+
                                                         .addGroup(layout.createSequentialGroup()
                                                                 .addGap(13, 13, 13)
                                                                 .addComponent(like_button)))))
                                 .addGap(0, 0, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(list_info_sistem_button)
-                                .addGap(212, 212, 212))
+
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+
+                                        .addComponent(jLabel9)
+
+                                        .addPreferredGap(
+                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+
+                                        .addComponent(list_info_sistem_button)
+
+                                        .addGap(212, 212, 212))
+
                         .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(
+                                                javax.swing.GroupLayout.Alignment.LEADING)
+
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGap(219, 219, 219)
+
                                                 .addComponent(jLabel3)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
+                                                .addPreferredGap(
+                                                        javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+
+                                                .addGroup(layout.createParallelGroup(
+                                                                javax.swing.GroupLayout.Alignment.LEADING)
+
                                                         .addGroup(layout.createSequentialGroup()
+
                                                                 .addComponent(jLabel2)
+
                                                                 .addGap(18, 18, 18)
+
                                                                 .addComponent(buscar_button))
+
                                                         .addGroup(layout.createSequentialGroup()
                                                                 .addGap(15, 15, 15)
+
                                                                 .addComponent(jLabel1))
+
                                                         .addComponent(list_button)))
+
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGap(230, 230, 230)
+
                                                 .addComponent(jLabel8)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+
+                                                .addPreferredGap(
+                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+
                                                 .addComponent(videos_button))
+
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGap(273, 273, 273)
+
                                                 .addComponent(quit_button)))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
+                                        Short.MAX_VALUE))
         );
+
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+
                         .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 21,
+
+                                .addComponent(jPanel1,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE,
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
+
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+
+                                .addComponent(jLabel1,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        21,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+
+                                .addGap(18, 18, 18)
+
+                                .addGroup(layout.createParallelGroup(
+                                                javax.swing.GroupLayout.Alignment.BASELINE)
+
                                         .addComponent(buscar_button)
                                         .addComponent(jLabel2))
+
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+
+                                .addGroup(layout.createParallelGroup(
+                                                javax.swing.GroupLayout.Alignment.BASELINE)
+
                                         .addComponent(list_button)
                                         .addComponent(jLabel3))
+
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+
+                                .addGroup(layout.createParallelGroup(
+                                                javax.swing.GroupLayout.Alignment.BASELINE)
+
                                         .addComponent(like_button)
                                         .addComponent(jLabel4))
+
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+
+                                .addGroup(layout.createParallelGroup(
+                                                javax.swing.GroupLayout.Alignment.BASELINE)
+
                                         .addComponent(playlist_button)
                                         .addComponent(jLabel6))
+
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+
+                                .addGroup(layout.createParallelGroup(
+                                                javax.swing.GroupLayout.Alignment.BASELINE)
+
                                         .addComponent(consult_users_button)
                                         .addComponent(jLabel7))
+
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+
+                                .addGroup(layout.createParallelGroup(
+                                                javax.swing.GroupLayout.Alignment.BASELINE)
+
                                         .addComponent(videos_button)
                                         .addComponent(jLabel8))
+
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+
+                                .addGroup(layout.createParallelGroup(
+                                                javax.swing.GroupLayout.Alignment.BASELINE)
+
                                         .addComponent(list_info_sistem_button)
                                         .addComponent(jLabel9))
+
                                 .addGap(38, 38, 38)
+
                                 .addComponent(quit_button)
+
                                 .addContainerGap(67, Short.MAX_VALUE))
         );
 
         pack();
     }
 
+    /**
+     * Abre a tela de busca de vídeos
+     */
     private void buscar_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         if (controller != null) controller.paginabuscar();
     }
 
+    /**
+     * Abre a tela de listagem de vídeos
+     */
     private void list_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         if (controller != null) controller.paginalistar();
     }
 
+    /**
+     * Abre a tela de curtidas
+     */
     private void like_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         if (controller != null) controller.paginacurtidas();
     }
 
+    /**
+     * Abre a tela de playlists
+     */
     private void playlist_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         if (controller != null) controller.paginaplaylist();
     }
 
+    /**
+     * Abre a tela de consulta de usuários
+     */
     private void consult_users_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         if (controller != null) controller.paginaConsultarUsuarios();
     }
 
+    /**
+     * Abre a tela de gerenciamento de vídeos
+     */
     private void videos_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         if (controller != null) controller.paginaVideos();
     }
 
+    /**
+     * Abre a tela de informações do sistema
+     */
     private void list_info_sistem_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         if (controller != null) controller.paginaInfoSistema();
     }
 
+    /**
+     * Retorna para a tela de login
+     */
     private void quit_buttonActionPerformed(java.awt.event.ActionEvent evt) {
         if (controller != null) controller.paginalogin();
     }
 
+    /**
+     * Método principal da aplicação
+     */
     public static void main(String args[]) {
+
         try {
+
             for (javax.swing.UIManager.LookAndFeelInfo info :
                     javax.swing.UIManager.getInstalledLookAndFeels()) {
+
                 if ("Nimbus".equals(info.getName())) {
+
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+
+        } catch (ReflectiveOperationException |
+                 javax.swing.UnsupportedLookAndFeelException ex) {
+
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
 
         java.awt.EventQueue.invokeLater(() -> {
+
             JFrame_inicial_admin frame = new JFrame_inicial_admin();
+
             frame.initController();
+
             frame.setVisible(true);
         });
     }

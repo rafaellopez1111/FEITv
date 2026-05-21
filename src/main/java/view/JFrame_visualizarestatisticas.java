@@ -13,11 +13,17 @@ public class JFrame_visualizarestatisticas extends javax.swing.JFrame {
     private Controller_Videos controllerVideos;
     private Controller controllerUsers;
 
+    /**
+     * Construtor da tela de visualização de estatísticas.
+     */
     public JFrame_visualizarestatisticas() {
         initComponents();
         setLocationRelativeTo(null);
     }
 
+    /**
+     * Inicializa os controllers responsáveis pela tela.
+     */
     public void initController() {
         try {
             this.controllerVideos = new Controller_Videos(this);
@@ -30,6 +36,9 @@ public class JFrame_visualizarestatisticas extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Inicializa todos os componentes gráficos da interface.
+     */
     @SuppressWarnings("unchecked")
     private void initComponents() {
 
@@ -87,12 +96,24 @@ public class JFrame_visualizarestatisticas extends javax.swing.JFrame {
 
         all_videos_button.setText("LISTAR");
         all_videos_button.addActionListener(evt -> {
-            if (controllerVideos != null) controllerVideos.listarTodosVideosEstatisticas();
+            if (controllerVideos != null) {
+                try {
+                    controllerVideos.listarTodosVideosEstatisticas();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         });
 
         go_back_button.setText("Voltar");
         go_back_button.addActionListener(evt -> {
-            if (controllerVideos != null) controllerVideos.voltarEstatisticas();
+            if (controllerVideos != null){
+                try {
+                    controllerVideos.voltarEstatisticas();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -151,6 +172,9 @@ public class JFrame_visualizarestatisticas extends javax.swing.JFrame {
         pack();
     }
 
+    /**
+     * Método principal responsável por iniciar a aplicação.
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> {
             JFrame_visualizarestatisticas frame = new JFrame_visualizarestatisticas();
@@ -159,7 +183,6 @@ public class JFrame_visualizarestatisticas extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration
     private javax.swing.JButton all_videos_button;
     private javax.swing.JButton go_back_button;
     private javax.swing.JLabel jLabel1;
